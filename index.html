@@ -1,1 +1,385 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manifesto Rock 2076</title><link rel="stylesheet" href="style.css"></head><body><header><h1>Manifesto Rock 2076</h1><p>A Metamorfose Rítmica e Estética do Rock</p></header><main><section><h2>Projeto</h2><p>Investigação da evolução do rock entre 1950 e 2076 e proposta da Politemporalidade Algorítmica.</p></section><section><h2>Obra Sonora</h2><audio controls><source src="audio/O_Despertar_Infinito_Master.mp3" type="audio/mpeg"></audio><p>Adicione o arquivo MP3 nesta pasta.</p></section><section><h2>Downloads</h2><ul><li><a href="MANIFESTO_ROCK_2076.md">Manifesto</a></li><li><a href="PROMPT_E_PARAMETROS.json">Metadados</a></li></ul></section></main><footer>CC BY-SA 4.0</footer></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesto Rock 2076 — Cyber-Rock / Neuro-Rock</title>
+  <style>
+    :root {
+      --neon-cyan: #00f3ff;
+      --neon-magenta: #ff006e;
+      --neon-purple: #8b5cf6;
+      --dark-bg: #0a0a0a;
+      --dark-surface: #1a1a1a;
+      --text-primary: #e0e0e0;
+      --text-secondary: #a0a0a0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 243, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 0;
+      border-bottom: 2px solid var(--neon-cyan);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+      margin-bottom: 1rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+      to { filter: drop-shadow(0 0 20px var(--neon-magenta)); }
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    }
+
+    section {
+      background: var(--dark-surface);
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--neon-cyan);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      border-left: 4px solid var(--neon-magenta);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: var(--neon-purple);
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .audio-container {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid var(--neon-purple);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    audio {
+      width: 100%;
+      margin: 1rem 0;
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    audio::-webkit-media-controls-panel {
+      background: var(--dark-surface);
+    }
+
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .metadata-item {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .metadata-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+    }
+
+    .metadata-label {
+      font-size: 0.9rem;
+      color: var(--neon-magenta);
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .metadata-value {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .downloads {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .download-btn {
+      background: transparent;
+      border: 2px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .download-btn:hover {
+      background: var(--neon-cyan);
+      color: var(--dark-bg);
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(0, 243, 255, 0.3);
+      color: var(--text-secondary);
+    }
+
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch::before {
+      animation: glitch-1 0.3s infinite;
+      color: var(--neon-cyan);
+      z-index: -1;
+    }
+
+    .glitch::after {
+      animation: glitch-2 0.3s infinite;
+      color: var(--neon-magenta);
+      z-index: -2;
+    }
+
+    @keyframes glitch-1 {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+    }
+
+    @keyframes glitch-2 {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-2px, -2px); }
+      80% { transform: translate(-2px, 2px); }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .container { padding: 1rem; }
+      section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="glitch" data-text="Manifesto Rock 2076">Manifesto Rock 2076</h1>
+      <p class="subtitle">A Metamorfose Rítmica e Estética do Rock</p>
+    </header>
+
+    <section>
+      <h2>Projeto</h2>
+      <p>
+        Investigação da evolução do rock entre 1950 e 2076 e proposta da 
+        <strong>Politemporalidade Algorítmica</strong> — uma abordagem que integra 
+        múltiplas temporalidades musicais através de processos algorítmicos e 
+        inteligência artificial.
+      </p>
+    </section>
+
+    <section>
+      <h2>Obra Sonora</h2>
+      <p>
+        Politemporalidade Algorítmica em prática: uma composição que funde 
+        elementos do rock clássico com texturas cybernéticas e estruturas 
+        neurais generativas.
+      </p>
+      
+      <div class="audio-container">
+        <h3>Reproduzir Obra</h3>
+        <audio controls>
+          <source src="obra.mp3" type="audio/mpeg">
+          Seu navegador não suporta a reprodução de áudio.
+        </audio>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem;">
+          💡 Adicione o arquivo <code style="color: var(--neon-cyan);">obra.mp3</code> na mesma pasta deste HTML
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Metadados do Projeto</h2>
+      <div class="metadata-grid" id="metadata-container">
+        <div class="metadata-item">
+          <div class="metadata-label">Projeto</div>
+          <div class="metadata-value">Manifesto Rock 2076</div>
+        </div>
+        <div class="metadata-item">
+          <div class="metadata-label">Gênero</div>
+          <div class="metadata-value">Cyber-Rock / Neuro-Rock</div>
+        </div>
+        <div class="metadata-item">
+          <div class="metadata-label">Conceito</div>
+          <div class="metadata-value">Politemporalidade Algorítmica</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Downloads</h2>
+      <p>Acesse os arquivos do projeto:</p>
+      <div class="downloads">
+        <a href="MANIFESTO_ROCK_2076.md" class="download-btn" download>
+          📄 Manifesto (.md)
+        </a>
+        <a href="PROMPT_E_PARAMETROS.json" class="download-btn" download>
+          📊 Metadados (.json)
+        </a>
+        <a href="codemeta.json" class="download-btn" download>
+          🏷️ CodeMeta (.json)
+        </a>
+        <a href="README.md" class="download-btn" download>
+          📖 README (.md)
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2076 Manifesto Rock 2076 — CC BY-SA 4.0</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+        Projeto artístico-acadêmico sobre a evolução do rock e sua projeção futura
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Carregar metadados dinamicamente
+    fetch('PROMPT_E_PARAMETROS.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('metadata-container');
+        container.innerHTML = '';
+        
+        Object.entries(data).forEach(([key, value]) => {
+          const item = document.createElement('div');
+          item.className = 'metadata-item';
+          item.innerHTML = `
+            <div class="metadata-label">${key}</div>
+            <div class="metadata-value">${value}</div>
+          `;
+          container.appendChild(item);
+        });
+      })
+      .catch(error => {
+        console.log('Metadados carregados estaticamente');
+      });
+
+    // Efeito de digitação no título
+    const title = document.querySelector('h1');
+    const originalText = title.textContent;
+    title.textContent = '';
+    let i = 0;
+    
+    function typeWriter() {
+      if (i < originalText.length) {
+        title.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    
+    setTimeout(typeWriter, 500);
+  </script>
+</body>
+</html>
